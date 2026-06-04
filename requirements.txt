@@ -1,0 +1,6 @@
+python-telegram-bot[job-queue]>=21.0
+requests
+beautifulsoup4
+lxml
+python-dotenv
+pytz
