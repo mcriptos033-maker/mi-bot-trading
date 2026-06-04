@@ -7,8 +7,10 @@ load_dotenv()
 class Config:
     TELEGRAM_TOKEN: str = os.environ["TELEGRAM_TOKEN"]
     ANTHROPIC_API_KEY: str = os.environ["ANTHROPIC_API_KEY"]
-    TIMEZONE: str = os.getenv("TIMEZONE", "America/Argentina/Buenos_Aires")
-    MORNING_HOUR: int = int(os.getenv("MORNING_HOUR", "7"))
-    MORNING_MINUTE: int = int(os.getenv("MORNING_MINUTE", "0"))
-    PRE_NEWS_MINUTES: int = int(os.getenv("PRE_NEWS_MINUTES", "7"))
-    POST_EVENT_DELAY_MIN: int = int(os.getenv("POST_EVENT_DELAY_MIN", "12"))
+
+    # UTC-3 — hora de Argentina (fijo)
+    TIMEZONE: str = "America/Argentina/Buenos_Aires"
+    MORNING_HOUR: int = 7    # primer reporte cada día a las 07:00
+    MORNING_MINUTE: int = 0
+    PRE_NEWS_MINUTES: int = 7   # alerta 7 min antes de cada noticia
+    POST_EVENT_DELAY_MIN: int = 12  # análisis 12 min después del dato
